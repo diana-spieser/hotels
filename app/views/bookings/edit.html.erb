@@ -1,0 +1,22 @@
+<%= link_to "← Back", root_path, class:"text-decoration-none t " %>
+<div class= "container-md text-show">
+   <div class="grid-card">
+    <div class="card-product">
+          <div class="card-product-infos">
+            <h2><strong><%= @hotel_room.name %></strong></h2>
+            <p><%= @hotel_room.description%></p>
+            <p><%= @hotel_room.price%> $ </p>
+        </div>
+      </div>
+    <div class="mt-5">
+    <%= simple_form_for [@booking] do |f|%>
+      <div class="booking-form">
+      <%= f.input :start_date, as: :date, html5: true, label: 'From' %>
+      <%= f.input :end_date, as: :date, html5: true, label: 'To' %>
+      </div>
+      <%= f.submit 'Confirm', class: "btn btn-primary"%>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
